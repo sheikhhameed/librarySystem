@@ -2,10 +2,9 @@ package org.example.repository;
 
 import org.example.entity.Borrower;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.stereotype.Repository;
 
-@ResponseBody
-public interface BorrowerRepository extends JpaRepository<Borrower, Integer> {
-
+@Repository
+public interface BorrowerRepository extends JpaRepository<Borrower, Long> {
 
 }

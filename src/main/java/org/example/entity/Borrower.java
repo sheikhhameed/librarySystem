@@ -1,32 +1,24 @@
 package org.example.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
-@Table
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+
 public class Borrower {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="id")
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    @Column(name="borrowername")
-    private String borrowerName;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getBorrowerName() {
-        return borrowerName;
-    }
-
-    public void setBorrowerName(String borrowerName) {
-        this.borrowerName = borrowerName;
-    }
+    private String name;
+    private String email;
 }
